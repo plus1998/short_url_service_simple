@@ -8,7 +8,7 @@
     "declarations": true
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-short_url_service --port=80",
+    "start": "egg-scripts start --daemon --title=egg-server-short_url_service",
     "stop": "egg-scripts stop --title=egg-server-short_url_service",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",

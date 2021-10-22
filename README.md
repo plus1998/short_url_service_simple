@@ -3,14 +3,10 @@
 Egg.js+Redis 短链接生成
 
 ## 使用
-
-默认监听80端口，请准备单独服务器
-
-或者修改package.json.scripts.start.port参数，然后自行配置nginx，反向代理到程序启动端口
-
 1. 将域名解析到服务器地址
-2. 调用接口/domain配置好域名
-3. 根据接口文档使用shortlenUrl / reductUrl
+2. 配置nginx域名反向代理到7001
+3. 调用接口/domain配置好域名
+4. 根据接口文档使用shortlenUrl / reductUrl
 
 ## 接口
 
