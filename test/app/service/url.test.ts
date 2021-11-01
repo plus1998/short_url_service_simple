@@ -9,6 +9,16 @@ describe('test/app/service/url.test.js', () => {
     ctx = app.mockContext();
   });
 
+  it('ranstr', async () => {
+    const num = 10000;
+    console.time(num + '');
+    for (let i = 0; i < num; i++) {
+      const str = await ctx.service.url.randStr(6);
+      assert.ok(str);
+    }
+    console.timeEnd(num + '');
+  });
+
   it('shortlen', async () => {
     const count = 10;
     console.time(`${count}条`);
