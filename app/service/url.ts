@@ -22,7 +22,7 @@ export default class Url extends Service {
       const newIndex = parseInt(curIndex) + 1;
       const data62 = await this.num62(newIndex);
       // 再加上随机字符串 使链接不可预测
-      const code = data62 + await this.randStr(6);
+      const code = data62 + await this.randStr(3);
       // REDIS保存
       await app.redis.set(`URL:${code}`, url, 'EX', 30 * 24 * 60 * 60); // 30 day
       await app.redis.set('URL_INDEX', newIndex);
