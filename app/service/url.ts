@@ -37,7 +37,9 @@ export default class Url extends Service {
       }
       // 选域名
       if (!domain) domain = await ctx.service.domain.randomOne();
-      const shortUrl = `http://${domain || 'localhost'}/${code}`;
+      let shortUrl;
+      if (domain.startsWith('http')) shortUrl = `${domain}${code}`; // 带协议头的 整个链接都是自定义 只在后面拼接code 方便自己设置跳转任何参数链接
+      else shortUrl = `http://${domain || 'localhost'}/${code}`;
       return { success: true, code, data: shortUrl };
     } catch (error) {
       if (lock) await lock.unlock();
